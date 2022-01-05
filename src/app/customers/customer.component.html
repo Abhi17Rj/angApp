@@ -1,0 +1,43 @@
+<table>
+    <tr>
+        <th>CustomerId</th>
+        <td><input type="text" [(ngModel)]="customerObj.CustomerId" ></td>
+    </tr>
+    <tr>
+        <th>CustomerName</th>
+        <td><input type="text" [(ngModel)]="customerObj.CustomerName" ></td>
+    </tr>
+    <tr>
+        <th>CustomerAmount</th>
+        <td><input type="text" [(ngModel)]="customerObj.CustomerAmount" ></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Add Customer" (click)="add()">
+            <input type="button" value="update Customer" (click)="update()">
+            <input type="button" value="Cancel" (click)="clear()">
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>CustomerId</th>
+        <th>CustomerName</th>
+        <th>CustomerId</th>
+    </tr>
+    <tr *ngFor="let item of customers">
+        <td>{{item.CustomerId}}</td>
+        <td>{{item.CustomerName}}</td>
+        <td>{{item.CustomerAmount}}</td>
+        <td>
+            <a href="#" (click)="selectRow(item)">Select</a>
+        </td>
+    </tr>
+</table>
+
+<div>
+    {{customerObj.CustomerId}} <br>
+    {{customerObj.CustomerName}} <br>
+    {{customerObj.CustomerAmount}} <br>
+</div>
